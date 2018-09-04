@@ -4,9 +4,7 @@
  * @brief program to read EPUB files
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "../inc/main.h"
 
 #define F_ARG 1
 /* length of the options string should be at max 2 -i/h/v */
