@@ -12,8 +12,12 @@
 
 int main(int argc, char *argv[])
 {
-	printf("Working!!!\n");
+	printf("xReader-devel-version");
 
 	/* parse the arguments passed to the function */
+	while(argc--)
+		printf("%s\n", *argv++);
+
+	/* customary return */
 	return 0;
 }
