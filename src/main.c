@@ -12,7 +12,6 @@
 
 int main(int argc, char *argv[])
 {
-	/*
-	 * code will be added later
-	 */
+	printf("Working!!!\n");
+	return 0;
 }
