@@ -10,13 +10,27 @@
  * 1. First check the name of the file provided in the CLI arguments
  */
 
+/*
+ * options list
+ * -h = display help information
+ * -i = input file will be following
+ * -v = version information of the program
+ */
+
 int main(int argc, char *argv[])
 {
-	printf("xReader-devel-version");
+	printf("xReader-devel-version\n");
 
 	/* parse the arguments passed to the function */
-	while(argc--)
-		printf("%s\n", *argv++);
+	argv++; 		/* increment to point to the first arg */
+	argc--;			/* decrement to match the count of arg parse */
+	while(argc--) {
+		/* perform a switch on the options provided */
+		if (**argv == '-')
+			printf("%s\n", *argv++);
+		/* ERROR : not parsing options when passed at the end of the
+		 * arglist */
+	}
 
 	/* customary return */
 	return 0;
