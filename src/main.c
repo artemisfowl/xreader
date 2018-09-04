@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
 		/* perform a switch on the options provided */
 		if (**argv == '-')
 			printf("%s\n", *argv);
-		/* ERROR : not parsing options when passed at the end of the
-		 * arglist */
 		argv++;
 	}
 
