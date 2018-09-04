@@ -13,5 +13,7 @@
 int main(int argc, char *argv[])
 {
 	printf("Working!!!\n");
+
+	/* parse the arguments passed to the function */
 	return 0;
 }
