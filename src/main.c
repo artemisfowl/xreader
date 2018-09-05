@@ -6,14 +6,6 @@
 
 #include "../inc/main.h"
 
-/*
- * flag enum
- */
-enum boolean {
-	T_FALSE,
-	T_TRUE
-};
-
 /* TODO Section:
  * 1. First check the name of the file provided in the CLI arguments
  */
