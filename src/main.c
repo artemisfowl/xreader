@@ -6,16 +6,12 @@
 
 #include "../inc/main.h"
 
-#define F_ARG 1
-/* length of the options string should be at max 2 -i/h/v */
-#define OPT_LEN 2
-
 /*
  * flag enum
  */
 enum boolean {
-	FALSE,
-	TRUE
+	T_FALSE,
+	T_TRUE
 };
 
 /* TODO Section:
@@ -61,7 +57,7 @@ void display_version(void)
 
 int main(int argc, char *argv[])
 {
-	enum boolean af = FALSE; /* accept file flag */
+	enum boolean af = T_FALSE; /* accept file flag */
 
 	/* parse the arguments passed to the function */
 	argv++; 		/* increment to point to the first arg */
@@ -87,7 +83,7 @@ int main(int argc, char *argv[])
 
 					case 'i':
 						if (argc)
-							af = TRUE;
+							af = T_TRUE;
 						else
 							printf("ERROR : "
 								"filename not "
