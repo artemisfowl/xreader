@@ -1,7 +1,7 @@
 # Makefile for building synax
 # (c) 2017 Sayantan, Nilangshu
 
-CFLAGS = -Wall -Wreturn-type -Werror -std=c11
+CFLAGS = -Wall -Wreturn-type -Werror -std=c11 `pkg-config --libs --cflags gtk+-3.0 webkit2gtk-4.0`
 DBG_FLAGS := -g -g3 -O0 -DENABLE_DEBUG
 REL_FLAGS := -O2
 LDFLAGS := -lzip -lxml2
