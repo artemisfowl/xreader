@@ -50,6 +50,7 @@ void display_version(void)
 int main(int argc, char *argv[])
 {
 	enum boolean af = T_FALSE; /* accept file flag */
+	struct ui_gtk gtk;
 
 	/* parse the arguments passed to the function */
 	argv++; 		/* increment to point to the first arg */
@@ -103,7 +104,7 @@ int main(int argc, char *argv[])
 	if (af)
 		/* pass the name of the file to be processed to the ui_setup
 		 * function */
-		ui_setup(*argv);
+		ui_setup(*argv, &gtk);
 
 	return 0;
 }

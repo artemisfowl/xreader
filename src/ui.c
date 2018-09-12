@@ -8,11 +8,12 @@
 /*
  * @brief function to set up the UI
  */
-int ui_setup(char *filepath)
+int ui_setup(char *filepath, struct ui_gtk *gtk)
 {
-	if (!filepath)
+	if (!filepath && !gtk) {
 		return 0;
-	else
+	} else {
 		printf("Filepath : %s\n", filepath);
+	}
 	return 1;
 }
