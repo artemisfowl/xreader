@@ -102,8 +102,6 @@ int main(int argc, char *argv[])
 
 	/* check where argv is pointing now */
 	if (af)
-		/* pass the name of the file to be processed to the ui_setup
-		 * function */
 		ui_setup(*argv, &gtk);
 
 	return 0;

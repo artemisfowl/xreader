@@ -6,6 +6,17 @@
 #include "epub.h"
 
 /**
+ * @brief default height of GtkWidget
+ */
+#define UI_GTK_WIN_HEIGHT 800
+
+/**
+ * @brief default width of GtkWidget
+ */
+#define UI_GTK_WIN_WIDTH 600
+
+
+/**
  * @brief structure to hold the GTKWindow handles
  */
 struct ui_gtk {
@@ -16,5 +27,10 @@ struct ui_gtk {
  * @brief function to setup the UI and start processing the file
  */
 int ui_setup(char *filepath, struct ui_gtk *gtk);
+
+/**
+ * @brief function to close the main window
+ */
+int ui_close_win(GtkWidget *win);
 
 #endif
