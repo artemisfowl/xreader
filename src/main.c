@@ -101,7 +101,9 @@ int main(int argc, char *argv[])
 
 	/* check where argv is pointing now */
 	if (af)
-		printf("%s\n", *argv); /* start processing the file now */
+		/* pass the name of the file to be processed to the ui_setup
+		 * function */
+		ui_setup(*argv);
 
 	return 0;
 }

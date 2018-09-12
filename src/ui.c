@@ -12,5 +12,7 @@ int ui_setup(char *filepath)
 {
 	if (!filepath)
 		return 0;
+	else
+		printf("Filepath : %s\n", filepath);
 	return 1;
 }
