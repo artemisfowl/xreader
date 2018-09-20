@@ -4,6 +4,36 @@
  */
 
 #include "../inc/ui.h"
+#include <sys/stat.h>
+
+/**
+ * @brief function to get the size of the file
+ */
+int get_file_size(const char *filepath)
+{
+	struct stat fstat;
+
+	if (stat(filepath, &fstat) != 0)
+		return 0;
+	return fstat.st_size;
+}
+
+/*
+ * @brief function for reading a specified file
+ */
+static char *read_file(const char *filepath)
+{
+	int l = get_file_size(filepath);
+	char *buf = calloc(l, sizeof(char));
+	FILE *f = fopen(filepath, "r");
+
+	/* read the contents now */
+	fread(buf, sizeof(char), l, f);
+
+	if (f)
+		fclose(f);
+	return buf;
+}
 
 /*
  * @brief function to set up the UI
@@ -38,6 +68,23 @@ int ui_setup(char *filepath, struct ui_gtk *gtk)
 		 * absolute path to the html file being loaded
 		 * Later this is the part where the file from the EPUB file
 		 * archive will be read and displayed */
+		char *content = read_file("../test_data/phd.html");
+
+		/* load the content in the web view */
+		webkit_web_view_load_html(web_view, content, NULL);
+
+		/* handle mouse and keyboard events when the browser area
+		 * becomes visible */
+		gtk_widget_grab_focus(GTK_WIDGET(web_view));
+
+		/* show the main window */
+		gtk_widget_show_all(gtk->ui_window);
+
+		/* run the main GTK+ loop */
+		gtk_main();
+
+		/* free the resource */
+		free(content);
 	}
 	return 1;
 }
