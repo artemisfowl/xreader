@@ -29,8 +29,13 @@ struct ui_gtk {
 int ui_setup(char *filepath, struct ui_gtk *gtk);
 
 /**
+ * @brief function to close the GTK main window
+ */
+void ui_destroy_win(void);
+
+/**
  * @brief function to close the main window
  */
-int ui_close_win(GtkWidget *win);
+int ui_close_web_view(GtkWidget *win);
 
 #endif
