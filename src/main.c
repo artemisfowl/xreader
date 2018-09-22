@@ -8,6 +8,8 @@
 
 /* TODO Section:
  * 1. First check the name of the file provided in the CLI arguments
+ * 2. Check if the web_view in the ui module supports scrolling of text or not
+ * 3. Check key handling for the GTK+ widget and loading of different resources
  */
 
 /*
